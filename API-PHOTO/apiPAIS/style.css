@@ -1,0 +1,163 @@
+    /* Importar a fonte Montserrat do Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+    /* Reset básico e configuração da fonte principal */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Estilos globais para o body */
+    body {
+        background-color: #f889c0;
+        background: linear-gradient(to right, #fb9a9a, #ffe1f2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+    }
+
+    /* Estilos para o contêiner principal */
+    .container {
+        background-color: #ffffff;
+        border-radius: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+        overflow: hidden;
+        width: 90%; /* Reduz a largura do contêiner para 90% da largura da viewport */
+        max-width: 600px; /* Define a largura máxima do contêiner */
+        min-height: 480px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 40px;
+    }
+
+    /* Estilos para parágrafos dentro do contêiner */
+    .container p {
+        font-size: 10px;
+        line-height: 24px;
+        letter-spacing: 0.5px;
+        margin-bottom: 20px;
+    }
+
+    /* Estilos para links dentro do contêiner */
+    .container a {
+        color: #8e2d2d;
+        font-size: 14px;
+        text-decoration: none;
+        margin-bottom: 15px;
+    }
+
+    /* Estilos para botões dentro do contêiner */
+    .container button {
+        background-color: #dc476f;
+        color: #fff;
+        font-size: 14px;
+        padding: 12px 50px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Estilo de hover para botões */
+    .container button:hover {
+        background-color: #000000;
+    }
+
+    /* Estilos para o formulário dentro do contêiner */
+    .container form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Estilos para inputs dentro do formulário */
+    .container input {
+        background-color: #eee;
+        border: none;
+        margin: 10px 0;
+        padding: 12px;
+        font-size: 14px;
+        border-radius: 8px;
+        width: 100%;
+        outline: none;
+    }
+
+    /* Estilos para o contêiner de alternância (toggle) */
+    .toggle-container {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        transition: transform 0.6s ease-in-out;
+        z-index: 1000;
+    }
+
+    /* Estilos para a parte de alternância (toggle) */
+    .toggle {
+        background-color: #dc476f;
+        color: #fff;
+        position: relative;
+        left: -100%;
+        width: 200%;
+        height: 100%;
+        transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Estilos para o conteúdo da parte de alternância (toggle) */
+    .toggle-painel {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 30px;
+        text-align: center;
+        top: 0;
+        transition: transform 0.6s ease-in-out;
+    }
+
+    /* Estilos para o texto esquerdo da parte de alternância */
+    .toggle-esquerda {
+        transform: translateX(-200%);
+    }
+
+    /* Estilos para o texto direito da parte de alternância */
+    .toggle-direita {
+        right: 0;
+        transform: translateX(0);
+    }
+
+
+    .country img {
+        width: 50px;           /* Largura desejada */
+        height: 50px;          /* Altura desejada */
+        object-fit: cover;     /* Redimensiona a imagem mantendo a proporção */
+        border-radius: 50%;    /* Transforma a imagem em formato circular */
+        margin-right: 10px;    /* Margem à direita para separar a imagem do texto */
+    }
+    
+    #imglista{
+        width: 100px;
+        text-align: left;
+    }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country API</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>SEARCH A COUNTRY</h1>
+        
+        <!-- Formulário para adicionar/editar país -->
+        <form id="countryForm">
+            <input for="id" type="number" id="id" placeholder="Choose id" autocomplete="id" required>
+            <input type="text" id="name" placeholder="Choose name" autocomplete="name"required>
+            <input type="text" id="continent" placeholder="Choose Continent" autocomplete="continent" required>
+            <input type="text" id="language" placeholder="Choose Language" autocomplete="language" required>
+            <input type="url" id="image" placeholder="Insira o URL da Imagem" autocomplete="image" required>
+            <button type="button" onclick="carregarImagem()">Carregar Imagem</button>
+            <div id="previewContainer"></div>
+           
+        
+            <button type="submit" id="saveBtn" >Save</button>
+            <button type="button" id="cancelBtn" onclick="cancelar()">Cancel</button>
+
+            <button id="botao-abrir">Lista</button>
+            <div id="container">
+                
+              
+                <div id="countryLIST"></div>
+            </div>
+
+            
+
+
+        </form>
+
+        <!-- Lista de países -->
+        
+    </div>
+   
+    <script src="index.js"></script>
+</body>
+</html>
