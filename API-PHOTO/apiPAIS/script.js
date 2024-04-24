@@ -3,9 +3,16 @@ const express = require('express')
 const fs = require('fs')
 const cors = require('cors')
 
+
+
 const server = express()
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+server.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 server.use(cors())
 server.use(express.json())
+
 
 server.listen(3000, () => {
     console.log("O servidor está funcional");
@@ -42,9 +49,9 @@ server.put('/Country/:id', (req, res) => {
     if (indiceCountry === -1) {
         return res.status(404).json({ mensagem: "País não encontrado" })
     } else {
-        dados.Country[indiceCountry].id = atualizarCountry.id || dados.Country[indiceCountry].id
+        
 
-        dados.Country[indiceCountry].nome = atualizarCountry.nome || dados.Country[indiceCountry].nome
+        dados.Country[indiceCountry].name = atualizarCountry.name || dados.Country[indiceCountry].name
         
         dados.Country[indiceCountry].continent = atualizarCountry.continent || dados.Country[indiceCountry].continent
 
@@ -80,96 +87,5 @@ function salvarDados() {
 }
 
 
-
-    
-
-
-/*
-
-document.addEventListener('DOMContentLoaded', () => {
-    const countryFORM = document.getElementById('countryFORM');
-    const countryList = document.getElementById('countryList');
-
-    // Carregar países do Local Storage ao carregar a página
-    displayCountries();
-
-*/
-
-    // Adicionar evento de submit ao formulário
-    // countryFORM.addEventListener('submit', (e) => {
-    //     e.preventDefault();
-
-    //     const name = document.getElementById('name').value;
-    //     const continent = document.getElementById('continent').value;
-    //     const language = document.getElementById('language').value;
-    //     const imageFile = document.getElementById('image').files[0];
-
-    //     if (!name || !continent || !language || !imageFile) {
-    //         alert('Please fill in all fields');
-    //         return;
-    //     }
-
-    //     const reader = new FileReader();
-    //     reader.onload = (event) => {
-    //         const imageData = event.target.result;
-
-    //         const country = {
-    //             name,
-    //             continent,
-    //             language,
-    //             image: imageData
-    //         };
-
-    //         saveCountry(country);
-    //         displayCountries();
-    //         countryFORM.reset();
-    //     };
-
-    //     reader.readAsDataURL(imageFile);
-    // });
-
-    /*
-
-    // Função para salvar país no Local Storage
-    function saveCountry(country) {
-        let countries = JSON.parse(dados.getItem('countries')) || [];
-        countries.push(country);
-        dados.setItem('countries', JSON.stringify(countries));
-    }
-*/
-    // Função para exibir países na lista
-    // function displayCountries() {
-    //     countryLIST.innerHTML = '';
-
-    //     const countries = JSON.parse(dados.getItem('countries')) || [];
-
-    //     countries.forEach((country, index) => {
-    //         const countryDiv = document.createElement('div');
-    //         countryDiv.classLIST.add('country');
-
-    //         const image = new Image();
-    //         image.src = country.image;
-    //         countryDiv.appendChild(image);
-
-    //         const infoDiv = document.createElement('div');
-    //         infoDiv.innerHTML = `
-    //             <h3>${country.name}</h3>
-    //             <p><strong>Continent:</strong> ${country.continent}</p>
-    //             <p><strong>Language:</strong> ${country.language}</p>
-    //         `;
-    //         countryDiv.appendChild(infoDiv);
-
-    //         const deleteBtn = document.createElement('button');
-    //         deleteBtn.innerText = 'Delete';
-    //         deleteBtn.addEventlistener('click', () => {
-    //             countries.splice(index, 1);
-    //             dados.setItem('countries', JSON.stringify(countries));
-    //             displayCountries();
-    //         });
-    //         countryDiv.appendChild(deleteBtn);
-
-    //         countryLIST.appendChild(countryDiv);
-    //     });
-    // }
 
 

@@ -11,8 +11,8 @@
 
     /* Estilos globais para o body */
     body {
-        background-color: #f889c0;
-        background: linear-gradient(to right, #fb9a9a, #ffe1f2);
+        background-color: #d80870;
+        background: linear-gradient(to right, #175e10, #338e5a);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -55,7 +55,7 @@
 
     /* Estilos para botões dentro do contêiner */
     .container button {
-        background-color: #dc476f;
+        background-color: #20641a;
         color: #fff;
         font-size: 14px;
         padding: 12px 50px;
@@ -71,7 +71,7 @@
 
     /* Estilo de hover para botões */
     .container button:hover {
-        background-color: #000000;
+        background-color: #82d3a1;
     }
 
     /* Estilos para o formulário dentro do contêiner */
@@ -158,6 +158,19 @@
     }
     
     #imglista{
-        width: 100px;
-        text-align: left;
+        width: 60px; /* Largura da imagem */
+    height: 60px; /* Altura da imagem */
+    border-radius: 50%; /* Transformar a imagem em um círculo */
+    object-fit: cover; /* Manter proporções da imagem e preencher o espaço */
+    margin-right: 10px; /* Margem à direita da imagem */
     }
+
+    .scrollable-div {
+            width: 300px;
+            height: 200px;
+            overflow: auto; /* Adiciona uma barra de rolagem quando o conteúdo excede as dimensões */
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        
